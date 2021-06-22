@@ -1,0 +1,27 @@
+@charset "UTF-8";
+
+
+/* 디스플레이 */
+#LCD {
+	font-family: 'Open 24 Display St', 'led_board-7', serif;	
+/* font-family: 'led board-7', 'Open 24 Display St', serif; */
+	font-size: 3.0em;
+	text-align: right;
+	background-color: black;
+	color: yellow;
+	padding: 5px;
+}
+
+/* 키패드 */
+.bts {
+	font-family: 'led board-7', 'Open 24 Display St', serif;
+	font-size: 1.8em;
+	width: 70px; 
+	height: 50px;
+	padding: 0px;
+	margin: 5px 0px;
+}
+#btn_cal {
+	width: 298px;	
+}
+

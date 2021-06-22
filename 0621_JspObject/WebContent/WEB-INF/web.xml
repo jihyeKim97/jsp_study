@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>JspObject</display-name>
+  <welcome-file-list>   
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  
+  <context-param>
+  	<description>수업 하고 있음..</description>
+  	<param-name>subject</param-name>
+  	<param-value>JSP 서버 기술 학습..</param-value> 
+  </context-param>
+  
+  <context-param>
+  	<description>오늘 날자 정보..</description>
+  	<param-name>today</param-name>
+  	<param-value>2021sus 06월 21일 월!</param-value> 
+  </context-param>
+  
+</web-app>

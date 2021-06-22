@@ -1,0 +1,48 @@
+@charset "UTF-8";
+
+.error {
+	background-color: pink;
+	color: white;
+}
+
+#nav ul li {
+	display: inline-block;
+	margin-right: 40px;
+}
+
+#nav ul li a {
+	text-decoration: none;
+	color: black;
+}
+
+#nav ul li a:hover {
+	background-color: yellow;
+	font-weight: bolder;
+	text-decoration: underline;
+}
+
+#nav ul li[sel] {
+	border-bottom: 3px double blue;
+}
+
+
+#stat table {
+	border-collapse: collapse;	
+}
+#stat table tr {
+	border-bottom: 1px solid black;
+}
+
+/* #stat table tr.odd {
+	background-color: yellow;
+}
+#stat table tr.even {
+	background-color: aqua;
+} */
+
+/*  #stat table tr:nth-child(2n) { */
+/* #stat table tr:nth-child(even) { */
+
+#stat table tr:nth-child(2n+1) {	 
+	background-color: aqua;
+}
