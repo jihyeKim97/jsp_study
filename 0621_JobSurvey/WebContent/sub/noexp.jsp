@@ -11,6 +11,7 @@
 		<%@ include file="../common/_header.jsp" %>
 	</div>
 	<div id="main">
+		<h2> <%= request.getParameter("num") %></h2>
 		<h3> 죄송합니다!!! <%= session.getAttribute("name") %>님 
 				(<%= request.getParameter("age") %>세)
 		</h3>

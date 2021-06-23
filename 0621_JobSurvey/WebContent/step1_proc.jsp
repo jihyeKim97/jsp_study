@@ -9,6 +9,8 @@
 	String address = request.getParameter("address");
 	String selfcheck = request.getParameter("selfcheck");
 	
+	int num = 100;
+	num++;
 	// 필터링, 에러체크
 	if( address == null || address.isEmpty() ) { %>
 		<!-- 포워딩 (주소가 유지) -->
@@ -31,7 +33,17 @@
 <% if(selfcheck != null && !selfcheck.isEmpty()) { %>
 	<%  // scl0 IT경험없음 설문 중단..
 	   if(selfcheck.equals("scl0")) { %>
-		<jsp:forward page="sub/noexp.jsp" />
+		<jsp:forward page="sub/noexp.jsp">
+			<jsp:param value="<%= ++num %>" name="num"/>
+		</jsp:forward>		
+	<% } else if(selfcheck.equals("scl5")) { 
+		request.setAttribute("coupon", "scl5_zm_2136287632823");
+		// 속성 추가
+	%>
+		<jsp:forward page="sub/special5.jsp">
+			<jsp:param value="z-mart_event" name="eventCode"/>
+		</jsp:forward>
+		<!-- 파람 추가 -->
 	<% } %>
 <% } else { %>
 	<% System.out.println("셀프체크 없음.!"); %>
@@ -39,5 +51,7 @@
 
 <!-- 스텝 2로 이동 -->
 <% // URL 재지정...
-	response.sendRedirect("survey.jsp?step=2");
+	num += 10;
+	//response.sendRedirect("survey.jsp?step=2");
+	response.sendRedirect("survey.jsp?step=2&num="+num);
 %>
