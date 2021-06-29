@@ -65,6 +65,7 @@
 		// 다 수개의 공통 클래스를 가진 모든 요소에
 		// 클릭이벤트 처리 핸들러 등록
 		$('.sub_title').click(function() {
+			//$('li p').css('display', 'block'); // none -> block 속성변화
 			$("li p").fadeIn(2000); // 2000ms간 서서히 나타남.
 			$('li p').css('background-color', 'yellow');
 			console.log(".sub_title click 이벤트: "
@@ -74,6 +75,8 @@
 		$('p').click(function() {
 			// this는 여기서 이벤트가 발생한 특정 객체 자신을 의미
 			$(this).css('background-color', 'white');
+// 			$(this).css('display', 'none');
+// 			$(this).css('visibility', 'hidden');
 			$(this).fadeOut(2000); // 2초가 서서히 사라짐..
 		});
 			
@@ -94,18 +97,23 @@
 				$(this).css('background-color','green');
 			});
 			$('input[type=button]').blur(function() {
+				//$(this).css('background-color','transparent');// 투명
 				$(this).css('background-color',oldColor);
 			});
 			
 			$('#ncbtn').click(function() {
 				var ncName = $('#newcome').val();
 				var ncDesc = $('#ncdesc').val();
+				//alert(ncName + ", " + ncDesc);
 				
 				var newLI = "<li style='display:none'> <span class='sub_title'>"+ncName+"</span>"
 					+ "<p style='display:none'>"
 					+ ncDesc + " </p> </li>";
 				console.log("신규회사 LI 추가 : " + newLI );
-				$('div#company_list ul').append(newLI); 
+//	 			$('div#company_list ul').prepend(newLI); // 앞
+				$('div#company_list ul').append(newLI); //뒤
+//	 			$('div#company_list ul li:last').css('display','block');
+//	 			$('div#company_list ul li:last').delay(2000).fadeIn(1000);
 				$('div#company_list ul li:last').show(1000);
 				
 			}); // ncbtn.click
@@ -118,6 +126,7 @@
 	</script>
 
 </head>
+<!-- <body onload=""> -->
 <body>
 	<div id="block1">
 		<h2 class="title">IT 회사 종류 리스트</h2>
